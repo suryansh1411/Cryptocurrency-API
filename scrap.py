@@ -10,6 +10,12 @@ header={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML,
 crypto_dic={}
 
 def obtain_data():
+    """    Obtain cryptocurrency data from a website and store it in a JSON file.
+
+    It sends a GET request to the specified URL with the given headers, then parses the response using BeautifulSoup.
+    It extracts cryptocurrency information from the parsed HTML and stores it in a dictionary, which is then written to a JSON file.
+    """
+
     response=requests.get(url, headers=header)
     
     soup=BeautifulSoup(response.text, 'lxml')
