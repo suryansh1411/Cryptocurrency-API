@@ -11,6 +11,7 @@ api=FastAPI(title="Cryptocurrency-API")
 @api.get('/')
 async def home():
     call(["python3", "scrap.py"])
+    
     with open("data.txt", 'r') as f:
         crypto_dic=json.load(f)
         crypto_list=list(crypto_dic.keys())
@@ -20,6 +21,7 @@ async def home():
 @api.get('/api/crypto/')
 async def get_crypto(req: str):
     call(["python3", "scrap.py"])
+    
     with open("data.txt", 'r') as f:
         crypto_dic=json.load(f)
         crypto_list=list(crypto_dic.keys())
@@ -32,6 +34,7 @@ async def get_crypto(req: str):
 @api.get('/api/all/')
 async def get_all_crypto():
     call(["python3", "scrap.py"])
+    
     with open("data.txt", 'r') as f:
         crypto_dic=json.load(f)
         print("heh")
