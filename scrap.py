@@ -21,6 +21,7 @@ def obtain_data():
 
     i=1;
     for cryptocurrency in cryptocurrencies:
+        
         cryptocurrency_name=cryptocurrency.find('td', class_='views-field-field-crypto-proper-name').a.text.strip()
         cryptocurrency_curr_price=cryptocurrency.find('td', class_='views-field-field-crypto-price').text.strip()
         cryptocurrency_change_per=cryptocurrency.find('td', class_='views-field-field-crypto-price-change-pc-24h').text.strip()
