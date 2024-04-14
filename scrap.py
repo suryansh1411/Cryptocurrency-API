@@ -16,6 +16,7 @@ def obtain_data():
 
     cryptocurrencies=soup.find('div', class_='view-cryptocurrency-index').find('tbody').find_all('tr')
 
+    
     with open("data.txt", 'w') as f:
         f.write('')
 
